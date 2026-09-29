@@ -1,9 +1,12 @@
 import { Dispatch, SetStateAction } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Page } from './main';
 import { SettingsTable } from '@/components/SettingsTable';
 
 function Home({ setPageToShow }: { setPageToShow: Dispatch<SetStateAction<Page>> }) {
+    const { t } = useTranslation();
+
     return (
         <div>
             <div className="wrapper">
@@ -30,7 +33,7 @@ function Home({ setPageToShow }: { setPageToShow: Dispatch<SetStateAction<Page>>
                             className="button"
                             role="button"
                             tabIndex={0}>
-                            Features info <NewTabIcon />
+                            {t('popup.featuresInfo', { defaultValue: 'Features info' })} <NewTabIcon />
                         </div>
                     </a>
                     {/* <a className="footer-item" href={twitterShareTxt} target="_blank">
@@ -46,7 +49,7 @@ function Home({ setPageToShow }: { setPageToShow: Dispatch<SetStateAction<Page>>
                             className="button"
                             role="button"
                             tabIndex={0}>
-                            About
+                            {t('popup.about', { defaultValue: 'About' })}
                             {/* <AboutIcon /> */}
                         </div>
                     </div>
@@ -62,10 +65,14 @@ function Home({ setPageToShow }: { setPageToShow: Dispatch<SetStateAction<Page>>
                         href="https://chatgptwriter.ai?ref=notionboost"
                         target="_blank"
                         rel="noopener noreferrer"
-                        title="ChatGPT Writer">
-                        ChatGPT Writer
+                        title={t('popup.chatGptWriter', { defaultValue: 'ChatGPT Writer' })}>
+                        {t('popup.chatGptWriter', { defaultValue: 'ChatGPT Writer' })}
                     </a>
-                    <span style={styles.smallGreyText}> - Let AI write emails and messages for you</span>
+                    <span style={styles.smallGreyText}>
+                        {t('popup.chatGptWriterDesc', {
+                            defaultValue: ' - Let AI write emails and messages for you',
+                        })}
+                    </span>
                 </div>
             </div>
         </div>

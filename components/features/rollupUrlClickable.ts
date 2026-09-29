@@ -1,4 +1,5 @@
 import { isObserverType, onElementLoaded, pageChangeListener, removePageChangeListener, toElement } from '../utils';
+import { t } from '../i18n';
 
 const notionAppInnerCls = '.notion-app-inner';
 
@@ -72,11 +73,10 @@ let linkComponentEl: any = null;
 let rollupCellEl: any = null;
 
 function createLinkComponent(url: string) {
-    return toElement(
+    const linkComponent = toElement(
         `<div class="linkComponent">
       <div>
         <a
-          title="Open URL in new tab"
           href="${url}"
           target="_blank"
           rel="noopener noreferrer"
@@ -99,6 +99,12 @@ function createLinkComponent(url: string) {
     </div>
     `,
     );
+
+    linkComponent
+        .querySelector('a')
+        ?.setAttribute('title', t('content.rollupOpenUrlTitle', { defaultValue: 'Open URL in new tab' }));
+
+    return linkComponent;
 }
 
 function handleTableHover(e: any) {

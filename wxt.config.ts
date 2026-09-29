@@ -1,10 +1,18 @@
 import { defineConfig } from 'wxt';
 
+import { generateExtensionLocales } from './scripts/generateExtensionLocales';
+
 // See https://wxt.dev/api/config.html
 export default defineConfig({
     modules: ['@wxt-dev/module-react'],
     manifestVersion: 3,
     outDir: 'build',
+    hooks: {
+        // The manifest's __MSG_*__ placeholders need _locales/, generated from locales/*.json
+        'build:publicAssets': (_wxt, files) => {
+            files.push(...generateExtensionLocales());
+        },
+    },
     zip: {
         name: 'notion_boost',
         artifactTemplate: '{{name}}_{{browser}}.zip',
@@ -29,11 +37,12 @@ export default defineConfig({
 
 // base manifest file
 const baseManifest = {
-    name: 'Notion Boost',
-    short_name: 'Notion Boost',
+    // i18n: placeholders are resolved from _locales/<lang>/messages.json based on the browser UI language
+    name: '__MSG_extName__',
+    short_name: '__MSG_extName__',
+    default_locale: 'en',
     version: '3.3.7',
-    description:
-        'Boost Notion productivity with 20+ customizations like outline, small text full width for all, back to top button etc',
+    description: '__MSG_extDesc__',
     author: 'Gourav Goyal',
     permissions: ['storage'],
     host_permissions: ['*://*.notion.so/*', '*://*.notion.site/*', '*://*.notion.com/*'],

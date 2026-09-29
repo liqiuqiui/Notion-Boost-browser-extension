@@ -1,0 +1,136 @@
+{
+    "manifest": {
+        "extName": "Notion Boost",
+        "extDesc": "为 Notion 提供 20 多项自定义增强：大纲目录、全站小字号与全宽、回到顶部按钮等"
+    },
+    "popup": {
+        "searchPlaceholder": "搜索功能…",
+        "noSettingFound": "未找到相关设置",
+        "featuresInfo": "功能说明",
+        "about": "关于",
+        "chatGptWriter": "ChatGPT Writer",
+        "chatGptWriterDesc": " - 让 AI 帮你撰写邮件和消息"
+    },
+    "about": {
+        "subtitle": "让 Notion 更高效、更少干扰",
+        "visit": "访问",
+        "homepage": "主页",
+        "missing": "还缺少想要的功能？",
+        "suggest": "提交建议 / 反馈",
+        "madeBy": "作者：",
+        "version": "版本："
+    },
+    "content": {
+        "scrollTopBtnTitle": "回到页面顶部",
+        "outlineToggleTitle": "显示/隐藏大纲",
+        "outlineLabel": "大纲",
+        "goToTopTitle": "回到顶部",
+        "rollupOpenUrlTitle": "在新标签页中打开链接"
+    },
+    "features": {
+        "displayOutline": {
+            "name": "显示大纲",
+            "desc": "为含有标题的页面显示常驻大纲（目录）"
+        },
+        "hideTableOfContents": {
+            "name": "隐藏目录",
+            "desc": "隐藏 Notion 自带的「目录」功能"
+        },
+        "hideAiBtn": {
+            "name": "隐藏页面 AI 按钮",
+            "desc": "隐藏页面右下角的悬浮 AI 按钮"
+        },
+        "disableAiAfterSpaceKey": {
+            "name": "按空格时不弹出 AI 菜单",
+            "desc": "按下空格键时不显示 AI 命令菜单"
+        },
+        "fullWidth": {
+            "name": "所有页面使用全宽",
+            "desc": "默认将所有页面设为全宽显示"
+        },
+        "smallText": {
+            "name": "所有页面使用小字号",
+            "desc": "默认将所有页面设为小字号"
+        },
+        "leftAlignMedia": {
+            "name": "媒体左对齐",
+            "desc": "将文档中的图片和视频左对齐，而不是居中显示"
+        },
+        "addMoreHeightToPage": {
+            "name": "增加页面可用高度",
+            "desc": "通过隐藏顶部留白、封面图和页面图标来增加页面高度"
+        },
+        "openFullPage": {
+            "name": "直接打开完整页面而非预览",
+            "desc": "跳过预览，直接打开表格、看板等的完整页面"
+        },
+        "rollupUrlClickable": {
+            "name": "让 Rollup 中的链接可点击",
+            "desc": "让 Rollup 属性中的网址可以点击"
+        },
+        "scrollTopBtn": {
+            "name": "「回到顶部」按钮",
+            "desc": "在右下角添加按钮，点击即可回到页面顶部"
+        },
+        "hideSlashMenuAfterSpace": {
+            "name": "按空格后关闭斜杠命令菜单",
+            "desc": "按下空格键即可关闭「/」斜杠命令弹窗"
+        },
+        "disableSlashMenu": {
+            "name": "按「/」时不显示斜杠命令菜单",
+            "desc": "按下「/」时不显示斜杠命令弹窗"
+        },
+        "disableSlashCommandPlaceholder": {
+            "name": "隐藏斜杠命令提示文字",
+            "desc": "隐藏提示文字：按「/」唤起命令…"
+        },
+        "showHoverText": {
+            "name": "悬停时显示完整文本",
+            "desc": "鼠标悬停时在表格单元格中显示完整文本"
+        },
+        "codeLineNumbers": {
+            "name": "显示代码行号",
+            "desc": "为代码块显示行号"
+        },
+        "spellcheckForCode": {
+            "name": "在代码块中启用拼写检查",
+            "desc": "在代码块中为拼写错误显示红色波浪线"
+        },
+        "disablePopupOnURLPaste": {
+            "name": "粘贴外部链接时不弹出菜单",
+            "desc": "粘贴外部网址时不显示弹窗（如关闭、创建书签、创建嵌入）"
+        },
+        "hideNotification": {
+            "name": "隐藏通知图标",
+            "desc": "侧边栏收起时隐藏红色通知图标，并隐藏标签页标题中的通知数量"
+        },
+        "narrowListItems": {
+            "name": "缩小条目间距",
+            "desc": "减小标题、列表等条目之间的间距，一屏显示更多内容"
+        },
+        "indentationLines": {
+            "name": "为列表添加缩进参考线",
+            "desc": "为项目符号列表和待办列表添加垂直缩进参考线"
+        },
+        "bolderTextInDark": {
+            "name": "深色模式下文字更粗",
+            "desc": "修复深色模式下粗体文字辨识度低的问题"
+        },
+        "hideHiddenColumns": {
+            "name": "在看板视图中隐藏「已隐藏列」",
+            "desc": "在看板视图中真正隐藏「已隐藏列」"
+        },
+        "hideComments": {
+            "name": "隐藏所有页面的评论区块",
+            "desc": ""
+        },
+        "hideBacklinks": {
+            "name": "隐藏所有页面的反向链接区块",
+            "desc": ""
+        },
+        "borderOnImages": {
+            "name": "为图片添加边框",
+            "desc": "为图片添加边框，使其在页面中更醒目"
+        }
+    }
+}

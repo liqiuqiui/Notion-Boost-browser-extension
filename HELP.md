@@ -3,7 +3,18 @@
 - add feature info to `src\js\settings.js`
 - add code to relevant file in `src\js\feature\` like `pageElements.js`
 - add CSS if any to `src\css\content.scss`
+- add feature text to `locales/en.json` and `locales/zh_CN.json` under `features.<func>.name` / `features.<func>.desc`
 - Add feature info to [`CHANGELOG.md`](./CHANGELOG.md)
+
+# i18n
+
+- UI strings live in `locales/<lang>.json` (nested keys) and are served by i18next
+  - React (popup) uses `useTranslation()`; content scripts use `t()` exported from `@/components/i18n`
+  - Language follows the browser UI language; missing keys fall back to the English text kept in `settings.ts`
+- Manifest strings (extension name/description) live in the `manifest` section of the same file
+  - `scripts/generateExtensionLocales.ts` turns them into `_locales/<lang>/messages.json` through WXT's
+    `build:publicAssets` hook, resolving the `__MSG_*__` placeholders in `wxt.config.ts` (both dev and build)
+  - So there is no `public/_locales` to maintain, adding a language is just adding `locales/<lang>.json`
 
 ---
 

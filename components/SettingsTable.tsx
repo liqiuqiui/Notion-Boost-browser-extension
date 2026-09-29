@@ -1,5 +1,6 @@
-import { settingDetails } from './settings';
+import { settingDetails, SettingDetail } from './settings';
 import { getElement, getLatestSettings } from './utils';
+import { useTranslation } from 'react-i18next';
 import { Fragment } from 'react';
 
 function isFuncEnabled(func: any) {
@@ -12,8 +13,9 @@ function isFuncEnabled(func: any) {
 }
 
 export function SettingsTable() {
+    const { t } = useTranslation();
     const [filterText, setFilterText] = useState('');
-    const [settings, setSettings] = useState(settingDetails);
+    const [settings, setSettings] = useState<SettingDetail[]>(settingDetails);
 
     useEffect(() => {
         refreshSettings();
@@ -21,7 +23,7 @@ export function SettingsTable() {
 
     const refreshSettings = () => {
         console.log('refreshing settings');
-        const obj = [...settingDetails];
+        const obj = [...settingDetails] as SettingDetail[];
 
         getLatestSettings()
             .then((set: any) => {
@@ -81,13 +83,20 @@ export function SettingsTable() {
         }
     }, []);
 
-    const filteredItems = settings.filter(
+    // Translate names/descriptions at render time; missing keys fall back to the English text in settings.ts
+    const localizedSettings = settings.map((item) => ({
+        ...item,
+        name: t(`features.${item.func}.name`, { defaultValue: item.name }),
+        desc: t(`features.${item.func}.desc`, { defaultValue: item.desc }),
+    }));
+
+    const filteredItems = localizedSettings.filter(
         (item) =>
             item.name.toLocaleLowerCase().includes(filterText) || item.desc.toLocaleLowerCase().includes(filterText),
     );
     console.log('filtered items', filteredItems);
 
-    const itemsToDisplay = filterText ? filteredItems : settings;
+    const itemsToDisplay = filterText ? filteredItems : localizedSettings;
 
     const handleOnchange = (e: any) => {
         console.log('value changed');
@@ -100,11 +109,15 @@ export function SettingsTable() {
                 type="text"
                 autoFocus
                 value={filterText}
-                placeholder="Search feature..."
+                placeholder={t('popup.searchPlaceholder', { defaultValue: 'Search feature...' })}
                 onInput={handleOnchange}
             />
             <div className="settings table">
-                {!filteredItems.length && <div className="no-setting">No setting found</div>}
+                {!filteredItems.length && (
+                    <div className="no-setting">
+                        {t('popup.noSettingFound', { defaultValue: 'No setting found' })}
+                    </div>
+                )}
                 {itemsToDisplay.map((obj, index) => (
                     <Fragment key={obj.func}>
                         <div

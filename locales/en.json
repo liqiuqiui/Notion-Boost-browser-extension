@@ -1,0 +1,136 @@
+{
+    "manifest": {
+        "extName": "Notion Boost",
+        "extDesc": "Boost Notion productivity with 20+ customizations like outline, small text full width for all, back to top button etc"
+    },
+    "popup": {
+        "searchPlaceholder": "Search feature...",
+        "noSettingFound": "No setting found",
+        "featuresInfo": "Features info",
+        "about": "About",
+        "chatGptWriter": "ChatGPT Writer",
+        "chatGptWriterDesc": " - Let AI write emails and messages for you"
+    },
+    "about": {
+        "subtitle": "Make Notion more productive and less distractive",
+        "visit": "Visit ",
+        "homepage": "Homepage",
+        "missing": "Missing something? ",
+        "suggest": "suggest / feedback",
+        "madeBy": "Made by ",
+        "version": "Version:"
+    },
+    "content": {
+        "scrollTopBtnTitle": "Scroll back to top",
+        "outlineToggleTitle": "Show/hide outline",
+        "outlineLabel": "Outline",
+        "goToTopTitle": "Go to top",
+        "rollupOpenUrlTitle": "Open URL in new tab"
+    },
+    "features": {
+        "displayOutline": {
+            "name": "Show Outline",
+            "desc": "Show sticky outline (table of contents) for pages that have headings"
+        },
+        "hideTableOfContents": {
+            "name": "Hide Table of contents",
+            "desc": "Hide Notion's default 'Table of contents' feature"
+        },
+        "hideAiBtn": {
+            "name": "Hide AI button from pages",
+            "desc": "Hide floating AI button (bottom-right corner) from pages"
+        },
+        "disableAiAfterSpaceKey": {
+            "name": "Disable AI menu when pressing space",
+            "desc": "Don't show AI command menu when pressing space key"
+        },
+        "fullWidth": {
+            "name": "Full width for all pages",
+            "desc": "Set full width for all pages by default"
+        },
+        "smallText": {
+            "name": "Small text for all pages",
+            "desc": "Set small text for all pages by default"
+        },
+        "leftAlignMedia": {
+            "name": "Left align media",
+            "desc": "Align document images and videos to the left instead of center"
+        },
+        "addMoreHeightToPage": {
+            "name": "Add more height to page",
+            "desc": "Add more height to page by hiding top padding, image cover, & icon"
+        },
+        "openFullPage": {
+            "name": "Open full page instead of preview",
+            "desc": "Bypass preview and open full page of table, board, etc"
+        },
+        "rollupUrlClickable": {
+            "name": "Make Rollup URLs clickable",
+            "desc": "Make URLs in Rollup property clickable"
+        },
+        "scrollTopBtn": {
+            "name": "'Scroll to top' button",
+            "desc": "Add button at bottom-right corner for scrolling back to top"
+        },
+        "hideSlashMenuAfterSpace": {
+            "name": "Close slash command menu after space",
+            "desc": "Close slash command popup menu '/' by pressing space key"
+        },
+        "disableSlashMenu": {
+            "name": "Don't show slash command menu when pressing '/'",
+            "desc": "Don't show slash command popup menu when pressing '/'"
+        },
+        "disableSlashCommandPlaceholder": {
+            "name": "Hide slash command placeholder",
+            "desc": "Hide placeholder: Press '/' for commands…"
+        },
+        "showHoverText": {
+            "name": "Show full text on hover",
+            "desc": "Show full text in table cells on mouse hover"
+        },
+        "codeLineNumbers": {
+            "name": "Show code line numbers",
+            "desc": "Show line numbers for code blocks"
+        },
+        "spellcheckForCode": {
+            "name": "Enable spellcheck inside code blocks",
+            "desc": "Show squiggly red lines for any spelling mistakes inside code blocks"
+        },
+        "disablePopupOnURLPaste": {
+            "name": "Don't show popup menu when pasting external links",
+            "desc": "Don't show popup menu (i.e. dismiss, create bookmark, create embed) when pasting external URLs"
+        },
+        "hideNotification": {
+            "name": "Hide notification icon",
+            "desc": "Hide red notification icon from sidebar when it's in closed state and hide notification number from tab title"
+        },
+        "narrowListItems": {
+            "name": "Narrow spacing between items",
+            "desc": "Fit more content on screen by reducing space between items i.e. headings, lists, etc."
+        },
+        "indentationLines": {
+            "name": "Add indentation lines to lists",
+            "desc": "Add vertical indentation lines to bullet and to-do lists"
+        },
+        "bolderTextInDark": {
+            "name": "Bolder text in dark mode",
+            "desc": "Fix poorly recognizable bold text in dark mode"
+        },
+        "hideHiddenColumns": {
+            "name": "Hide 'Hidden columns' in board view",
+            "desc": "Truly hide 'Hidden columns' in Kanban board view"
+        },
+        "hideComments": {
+            "name": "Hide comments section from all pages",
+            "desc": ""
+        },
+        "hideBacklinks": {
+            "name": "Hide backlinks section from all pages",
+            "desc": ""
+        },
+        "borderOnImages": {
+            "name": "Add frame to images",
+            "desc": "Add frame around images to make them easily noticeable on page"
+        }
+    }
+}

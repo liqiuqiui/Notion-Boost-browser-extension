@@ -8,6 +8,7 @@ import {
     removePageChangeListener,
     toElement,
   } from "../utils";
+  import { t } from "../i18n";
 
 
   let pageChangeObserverObj = {};
@@ -81,8 +82,10 @@ import {
               }
               const sibling = document.querySelector(siblingCls);
               const btnEl = toElement(
-                `<div class=${outlineToggleBtn} role="button" title="Show/hide outline" tabindex="-1">Outline</div>`
+                `<div class=${outlineToggleBtn} role="button" tabindex="-1"></div>`
               );
+              btnEl.title = t("content.outlineToggleTitle", { defaultValue: "Show/hide outline" });
+              btnEl.textContent = t("content.outlineLabel", { defaultValue: "Outline" });
   
               btnEl.addEventListener("click", () => {
                 console.log("yup");
@@ -118,8 +121,10 @@ import {
               }
               const sibling = document.querySelectorAll(siblingCls)[2];
               const btnEl = toElement(
-                `<div class=${outlineToggleBtn} role="button" title="Show/hide outline" tabindex="-1">Outline</div>`
+                `<div class=${outlineToggleBtn} role="button" tabindex="-1"></div>`
               );
+              btnEl.title = t("content.outlineToggleTitle", { defaultValue: "Show/hide outline" });
+              btnEl.textContent = t("content.outlineLabel", { defaultValue: "Outline" });
   
               btnEl.addEventListener("click", () => {
                 const el = document.querySelector(".nb-outline");
@@ -214,12 +219,18 @@ import {
         <div class="nb-outline">
           <div class="table_of_contents">
             <div class="title">
-            <p id="nbScrollToTop" title="Go to top" role="button">Outline</p>
+            <p id="nbScrollToTop" role="button"></p>
             </div>
             <div class="block-wrapper">
             </div>
           </div>
           </div>`);
+  
+        const outlineTitleEl = outlineEl.querySelector("#nbScrollToTop");
+        if (outlineTitleEl) {
+          outlineTitleEl.textContent = t("content.outlineLabel", { defaultValue: "Outline" });
+          outlineTitleEl.setAttribute("title", t("content.goToTopTitle", { defaultValue: "Go to top" }));
+        }
   
         // add toc container
         notionScrollerEl.parentNode.insertBefore(outlineEl, notionScrollerEl);

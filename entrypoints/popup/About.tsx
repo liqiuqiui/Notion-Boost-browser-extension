@@ -1,7 +1,11 @@
 import { Dispatch, SetStateAction } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { Page } from './main';
 
 export function About({ setPageToShow }: { setPageToShow: Dispatch<SetStateAction<Page>> }) {
+    const { t } = useTranslation();
+
     return (
         <div>
             <div
@@ -19,19 +23,21 @@ export function About({ setPageToShow }: { setPageToShow: Dispatch<SetStateActio
                 <span className="icon-nb" />
                 Notion Boost
             </div>
-            <div className="sub-title underline">Make Notion more productive and less distractive</div>
+            <div className="sub-title underline">
+                {t('about.subtitle', { defaultValue: 'Make Notion more productive and less distractive' })}
+            </div>
 
             <Bullet
-                txtS="Visit "
+                txtS={t('about.visit', { defaultValue: 'Visit ' })}
                 txtE=""
-                urlTxt="Homepage"
+                urlTxt={t('about.homepage', { defaultValue: 'Homepage' })}
                 url="https://gourav.io/notion-boost"
             />
 
             <Bullet
                 txtE=""
-                txtS="Missing something? "
-                urlTxt="suggest / feedback"
+                txtS={t('about.missing', { defaultValue: 'Missing something? ' })}
+                urlTxt={t('about.suggest', { defaultValue: 'suggest / feedback' })}
                 url="https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues"
             />
 
@@ -66,7 +72,7 @@ export function About({ setPageToShow }: { setPageToShow: Dispatch<SetStateActio
         /> */}
             <Bullet
                 txtE=""
-                txtS="Made by "
+                txtS={t('about.madeBy', { defaultValue: 'Made by ' })}
                 urlTxt={<>Gourav Goyal</>}
                 url="https://gourav.io"
             />
@@ -74,7 +80,7 @@ export function About({ setPageToShow }: { setPageToShow: Dispatch<SetStateActio
                 txtE=""
                 url={''}
                 urlTxt=""
-                txtS={`Version: ${browser.runtime.getManifest().version}`}
+                txtS={`${t('about.version', { defaultValue: 'Version:' })} ${browser.runtime.getManifest().version}`}
             />
         </div>
     );

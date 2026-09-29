@@ -29,7 +29,22 @@ export const defaultSettings = {
     disableAiAfterSpaceKey: false,
 };
 
-export const settingDetails = [
+export interface SettingDetail {
+    func: string;
+    /** Display name, translated via the features.<func>.name message */
+    name: string;
+    /** Description, translated via the features.<func>.desc message */
+    desc: string;
+    /** Mutually exclusive feature: it gets disabled when this one is enabled */
+    disable_func?: string;
+    /** Extra flag used by specific features (e.g. addMoreHeightToPage) */
+    pf?: boolean;
+    /** Enabled/disabled state, written at runtime */
+    status?: string;
+}
+
+// name/desc keep the English text as a fallback when a translation is missing
+export const settingDetails: SettingDetail[] = [
     {
         func: 'displayOutline',
         name: 'Show Outline',
@@ -170,3 +185,4 @@ export const settingDetails = [
 
     // step 2 of 2: add function name and description
 ];
+
